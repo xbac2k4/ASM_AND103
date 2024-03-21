@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.asm_and103.Adapter.AdapterFood;
 import com.example.asm_and103.Model.Food;
 import com.example.asm_and103.service.APIService;
-import com.example.asm_and103.service.HttpRequest;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
@@ -80,8 +81,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_context, menu);
+        getMenuInflater().inflate(R.menu.menu_option, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.menu_context, menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
     }
 
     @Override
@@ -96,9 +103,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Đăng xuất", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void getListCity() {
-
     }
 }

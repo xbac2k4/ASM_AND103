@@ -2,11 +2,13 @@ package com.example.asm_and103.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,6 +47,13 @@ public class AdapterFood extends RecyclerView.Adapter<AdapterFood.ViewHolder> {
         holder.tvPrice.setText("Price: $" + list.get(i).getPrice());
         holder.tvEvaluate.setText("Quantity: " + list.get(i).getQuantity());
         holder.tvDescribe.setText("Describe: " + list.get(i).getDescribe());
+        holder.item_food.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+
+                return false;
+            }
+        });
     }
 
     @Override
@@ -55,6 +64,7 @@ public class AdapterFood extends RecyclerView.Adapter<AdapterFood.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvID, tvName, tvPrice, tvEvaluate, tvDescribe;
         ImageView imgAvatar;
+        LinearLayout item_food;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -64,6 +74,8 @@ public class AdapterFood extends RecyclerView.Adapter<AdapterFood.ViewHolder> {
             tvPrice = (TextView) itemView.findViewById(R.id.tv_price);
             tvEvaluate = (TextView) itemView.findViewById(R.id.tv_evaluate);
             tvDescribe = (TextView) itemView.findViewById(R.id.tv_describe);
+            item_food = itemView.findViewById(R.id.item_food);
         }
     }
+
 }
