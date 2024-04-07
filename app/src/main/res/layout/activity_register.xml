@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register"
+    tools:context=".View.Register"
     android:orientation="vertical"
     android:background="#ffeef2">
     <ScrollView
@@ -42,54 +42,79 @@
                     android:textSize="48dp"
                     android:textStyle="bold"
                     android:textColor="#3B608C"/>
-                <EditText
-                    android:id="@+id/edt_username"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="50dp"
-                    android:ems="10"
-                    android:padding="8dp"
-                    android:hint="E-Mail"
-                    android:inputType="text"
-                    android:textColorHint="#756C6C"
-                    android:drawableLeft="@drawable/email"
-                    android:drawablePadding="16dp"/>
-
-                <EditText
-                    android:id="@+id/edt_password"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="50dp"
-                    android:ems="10"
-                    android:padding="8dp"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:textColorHint="#756C6C"
-                    android:drawableLeft="@drawable/password"
-                    android:drawablePadding="16dp"/>
-
-                <EditText
-                    android:id="@+id/edt_cfpassword"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="50dp"
-                    android:ems="10"
-                    android:padding="8dp"
-                    android:hint="Confirm Password"
-                    android:inputType="textPassword"
-                    android:textColorHint="#756C6C"
-                    android:drawableLeft="@drawable/password"
-                    android:drawablePadding="16dp"/>
-
-                <Button
-                    android:id="@+id/btn_signup"
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_broken_image_24"
+                    android:layout_marginBottom="10dp"
+                    />
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="username"
+                    app:hintAnimationEnabled="true"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
                     android:layout_marginTop="20dp"
+                    app:hintAnimationEnabled="true"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:layout_marginTop="20dp"
+                    app:hintAnimationEnabled="true"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:layout_marginTop="20dp"
+                    app:hintAnimationEnabled="true"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_register"
+                    android:text="Register"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#FF9A33"
                     android:background="@drawable/border"
-                    android:backgroundTint="#ff9a33"
-                    android:text="Signup"
-                    android:textColor="#fff" />
+                    />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

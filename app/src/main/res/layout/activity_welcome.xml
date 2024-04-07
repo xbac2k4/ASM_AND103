@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Welcome">
+    tools:context=".View.Welcome">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,11 +20,10 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="#1B60F1"
-            android:text="WELCOME TO\n.FOOD."/>
+            android:text="WELCOME TO\n"/>
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/logo" />
+            android:layout_height="200dp" />
     </LinearLayout>
 
     <Button
