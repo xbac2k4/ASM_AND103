@@ -24,8 +24,16 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface APIService {
-    String ipv4 = "192.168.1.118";
+    String ipv4 = "10.0.2.2";
     String DOMAIN = "http://"+ ipv4 +":3000/api/";
+    @POST("add-distributor")
+    Call<Response<Distributor>> addDistributor(@Body Distributor distributor);
+    @PUT("update-distributor-by-id/{id}")
+    Call<Response<Distributor>> updateDistributor(@Path("id") String id,@Body Distributor distributor);
+    @DELETE("delete-distributor-by-id/{id}")
+    Call<Response<Distributor>> deleteDistributor(@Path("id") String id);
+    @GET("search-distributor-by-name")
+    Call<Response<ArrayList<Distributor>>> searchDistributor(@Query("name") String name);
 
     @GET("get-distributor")
     Call<Response<ArrayList<Distributor>>> getDistributor();

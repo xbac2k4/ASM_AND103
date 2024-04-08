@@ -7,7 +7,18 @@ public class Distributor {
     private String _id;
     private String name;
 
+    private String createdAt, updatedAt;
     public Distributor() {
+    }
+    public Distributor(String _id, String name) {
+        this._id = _id;
+        this.name = name;
+    }
+    public Distributor(String _id, String name, String createdAt, String updatedAt) {
+        this._id = _id;
+        this.name = name;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public String get_id() {
@@ -24,5 +35,20 @@ public class Distributor {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

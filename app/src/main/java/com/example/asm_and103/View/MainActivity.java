@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         token = sharedPreferences.getString("token","");
 //        getListCity();
         tv_list_rong = findViewById(R.id.list_rong);
-        rcv = findViewById(R.id.rcv_food);
+        rcv = findViewById(R.id.rcv);
         searchView = findViewById(R.id.search_view);
         spn_sapxep = findViewById(R.id.spn_sapxep);
         httpRequest = new HttpRequest();
@@ -243,6 +243,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             finishAffinity();
             startActivity(new Intent(MainActivity.this, Login.class));
             Toast.makeText(MainActivity.this, "Đăng xuất", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId() == R.id.item_distributor) {
+            startActivity(new Intent(MainActivity.this, DistributorActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
